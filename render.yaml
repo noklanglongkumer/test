@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: current-affairs-tracker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: NEWS_API_KEY
+        value: 9cefb20616e847dd92290ae924652579
